@@ -7,9 +7,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class MemorySecurityConfiguration  extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		String encodedPassword = new BCryptPasswordEncoder().encode("mario");
+		String encodedPassword = new BCryptPasswordEncoder().encode("jc");
 
-		auth.inMemoryAuthentication().withUser("mario").password(encodedPassword).roles("manager", "dev").and()
+		auth.inMemoryAuthentication().withUser("jc").password(encodedPassword).roles("manager", "dev").and()
 				.passwordEncoder(new BCryptPasswordEncoder());
 	}
 }
